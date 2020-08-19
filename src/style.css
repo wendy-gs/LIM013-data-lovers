@@ -1,0 +1,27 @@
+*{
+    margin:0;
+    padding: 0;
+}
+header{
+    width: 100%;
+    background-color: #1cdddd;
+}
+/* el contenedor sera flexible de los li */
+.menu ul{
+    margin:0;
+    list-style:none;
+    padding: 0;
+    display: flex;
+    /* con esto decidimos donde queremos que se hubique */
+    justify-content: flex-end;
+}
+
+.menu li a{
+    display: block;/*para poder darle pading*/
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+.menu li i{
+    margin-right: 10px;
+}

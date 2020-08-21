@@ -7,24 +7,38 @@ import data from './data/pokemon/pokemon.js';
 
 console.log(example, data);
 
-const POKEMON_API = './data/pokemon/pokemon.json';
+import { example,show,filterData,sortData } from './data.js';
+// import data from './data/lol/lol.js';
+import data from './data/pokemon/pokemon.js';
+// import data from './data/rickandmorty/rickandmorty.js';
 
-const promise = fetch(POKEMON_API);
-
-
-
-function mostrandoPoke(poke){
-return `
-    <div>
-    <p>${poke.num}</p>
-    <img src="${poke.img}">
-    <p>${poke.name}</p>
-    </div>
-`
+console.log(example, data);
+console.log(data.pokemon.length);
+;
+//BUSCADOR DE POKEMON
+const searchName=()=>{
+	const namePoke=document.getElementById("Buscador").value;
+	document.getElementById("contenedor-imagenes").innerHTML= filterData(data.pokemon,"name",namePoke);
 }
-document.getElementById("imagenes").innerHTML=`
-<p>tenemos  ${data.pokemon.length}pokemon</p>
-${data.pokemon.map(mostrandoPoke).join('')}`
+document.getElementById("btn-buscar").addEventListener("click",searchName);
+  
+//MOSTRAR TODOS LOS POKEMON
+const showAll=()=>{
+	document.getElementById("contenedor-imagenes").innerHTML=show(data.pokemon);
+}
+document.getElementById("btn-todo").addEventListener("click",showAll);
+//ODERNAR POKEMON
+const filterPoke=()=>{
+	const typeFilter=document.getElementsByClassName("cmb-ordenamiento").value;
+	const newData=JSON.parse(JSON.stringify(data.pokemon));
+	document.getElementById("contenedor-imagenes").innerHTML=sortData(newData,"number","upward");
+}
+document.getElementById("cmb-ordenamiento").addEventListener("change",filterPoke);
+
+
+
+
+
 
 // // 
 

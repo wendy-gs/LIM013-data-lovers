@@ -8,23 +8,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="banner">
-      <div class ="contenedor">
-        <a class="navbar-brand" href="#"><img src="img/Logo.png" class="img-fluid logo-pokemon" alt="Logo"></a>
-        <nav class="menu">
+    <header>
+      <div class="logo">
+      <img id="imagenpoke" src="/imagenes/LOGOPOK.PNG" style='min-width: 100px'>
+    </div>
+        <input type="checkbox" id="btn-menu">
+        <label class="icono-menu" for="btn-menu"><i class="fas fa-bars"></i> Menú</label>
+      <nav class="menu">
         <ul>
           <li><a href="#"><i class="fas fa-home"></i>Inicio</a></li>
           <li><a href="#"><i class="fas fa-dragon"></i>Pokémon</a></li>
           <li><a href="#"><i class="fas fa-gamepad"></i>Mejores movimientos</a></li>
           <li><a href="#"><i class="fas fa-chart-line"></i>Top Pokémon</a></li>
-         </ul>
-        </nav>
-      </header>
+        </ul>
+      </nav>
+    </header>
 
-      <!-- <div>Lista desplegable</div>
-        <select name="ordenar" id="sort list">
+      <div class="Lista desplegable">
+        <select name="order" id="sort list">
+          <option value="option">Ordenar por</option>
+          <option value="upward">A - Z</option>
+          <option value="falling">Z - A</option>
+        </select>
+      </div>
+      
+      <div id="imagenes">
 
-        </select> -->
+      </div>
 
   </head>
     <script src="main.js" type="module"></script>

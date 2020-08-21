@@ -1,27 +1,106 @@
 *{
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
 header{
     width: 100%;
-    background-color: #1cdddd;
+    background-color: #5ad47b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-/* el contenedor sera flexible de los li */
+.logo{
+    width: 12%;
+    min-width: 120px;
+    display: flex;
+    justify-content: center;
+    padding-left: 2%;
+}
+#imagenpoke{
+    width: 100%;
+}
+#btn-menu{
+    display: none;
+}
+.icono-menu{
+    font-size: 110%;
+    color: #fff;
+    display: none;
+}
+
 .menu ul{
     margin:0;
     list-style:none;
     padding: 0;
     display: flex;
-    /* con esto decidimos donde queremos que se hubique */
     justify-content: flex-end;
 }
 
 .menu li a{
-    display: block;/*para poder darle pading*/
-    padding: 20px;
+    display: block; 
+    padding: 0em 1em;
     color: #fff;
     text-decoration: none;
+    font-size: 1.1em;
 }
 .menu li i{
     margin-right: 10px;
+}
+ .Contenido-principal{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-buscador{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 2.5em;
+
+}
+#btn-buscar{
+    color: #fff;
+    background-color: #4BAADE;
+    width: 5%;
+    min-width: 50px;
+    border: none;
+    font-size: 1.5em;
+    
+}
+#Buscador{
+    width: 40%;
+    font-size: 1em;
+    padding: 0.5em;
+    margin-right:0.5em;
+    border-radius: 8px;
+    border: 4px solid #4BAADE;
+}
+/* sirve para cambiar de barra de navegacion a menu para celular  */
+
+@media (max-width:760px){
+    .icono-menu{
+        display: block;
+    }
+    .menu{
+        position: absolute;
+        margin-top:235px;
+        background:#1cdddd ;
+        width: 100%;
+        transition: all 0.5s;
+        transform: translateX(-100%);
+    }
+    .menu ul{
+        flex-direction: column;
+    }
+    .menu li{
+        border-top: 1px solid #fff;
+    }
+    .menu li a{
+    padding: 10px;
+
+    }
+    #btn-menu:checked ~ .menu{
+        transform: translateX(0%) ;
+    }
 }

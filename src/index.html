@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Icono -->
+    <link rel="shortcut icon" type="image/x-icon" href="imagenes/favicon.jpg">
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link href="/css/all.css" rel="stylesheet">
     <title>Pokemon Go</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="/css/all.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   </head>
   <body>
     <header>
       <div class="logo">
       <img id="imagenpoke" src="/imagenes/LOGOPOK.PNG" style='min-width: 100px'>
     </div>
+    <!-- Menú -->
         <input type="checkbox" id="btn-menu">
         <label class="icono-menu" for="btn-menu"><i class="fas fa-bars"></i> Menú</label>
       <nav class="menu">
@@ -23,20 +28,44 @@
         </ul>
       </nav>
     </header>
-
-      <div class="Lista desplegable">
-        <select name="order" id="sort list">
-          <option value="option">Ordenar por</option>
-          <option value="upward">A - Z</option>
-          <option value="falling">Z - A</option>
+    <!-- Buscador -->
+    <section class="Contenido-principal">
+      <section class="contenedor-buscador">
+      <input id="Buscador" type="text"placeholder="Busca un Pokémon, p.e. pikachu"/>
+      <button type="button" id="btn-buscar"><i class="fas fa-search"></i></button>
+      </section>
+      <section class="contendor-filtros">
+        <button type="button" id="btn-todo">Mostrar Todo</button>
+      </section>
+    <!-- combobox -->
+      <section class="contenedor-ordenamiento">
+        <select id="cmb-ordenamiento">
+          <option>Ordenalo por:</option>
+          <option value="A-Z">Ordenar de a-z</option>
+          <option value="Z-A">Ordenar de z-a</option>
+          <option value="1-251">Ordenar ascendente(1-251)</option>
+          <option value="251-1">Ordenar descendente(251-1)</option>
         </select>
+      </section>
+      <div id="contenedor-imagenes"></div>
+    </section>
+    <!-- Pie de pagina -->
+    <footer>
+      <div class="container-footer">
+        <p>Derechos de autor 2020 Gonzales y Huamani © </p>
       </div>
-      
-      <div id="imagenes">
+      <div class="row">
+        <i class="fab fa-facebook-f"> facebook </i>
+        <i class="fab fa-instagram"> instagram </i>
+        <i class="fas fa-desktop"> desktop </i>
+        <i class="fas fa-mobile-alt"> mobile </i>
+        <!-- <img src="">
+        <img src="">
+        <img src=""> -->
 
       </div>
-
-  </head>
+    </footer>
+    <!-- <div id="root"></div> -->
     <script src="main.js" type="module"></script>
   </body>
 </html>

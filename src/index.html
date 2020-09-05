@@ -12,34 +12,52 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   </head>
   <body>
-    <header>
+    <header >
+      <!-- Menú -->
       <div class="logo">
-      <img id="imagenpoke" src="/imagenes/LOGOPOK.PNG" style='min-width: 100px'>
-    </div>
-    <!-- Menú -->
+        <img id="imagenpoke" src="/imagenes/LOGOPOK.PNG" style="min-width:100px">
+      </div>
         <input type="checkbox" id="btn-menu">
         <label class="icono-menu" for="btn-menu"><i class="fas fa-bars"></i> Menú</label>
       <nav class="menu">
         <ul>
-          <li><a href="#"><i class="fas fa-home"></i>Inicio</a></li>
-          <li><a href="#"><i class="fas fa-dragon"></i>Pokémon</a></li>
-          <li><a href="#"><i class="fas fa-gamepad"></i>Mejores movimientos</a></li>
-          <li><a href="#"><i class="fas fa-chart-line"></i>Top Pokémon</a></li>
+          <li><a href="#" id="menu_inicio"><i class="fas fa-home"></i>Inicio</a></li>
+          <li><a href="#" id="menu_pokemon"><i class="fas fa-dragon"></i>Pokémon</a></li>
+          <li><a href="#" id="menu_movimientos"><i class="fas fa-gamepad"></i>Mejores movimientos</a></li>
+          <li><a href="#" id="menu_frecuencia"><i class="fas fa-chart-line"></i>Top Pokémon</a></li>
         </ul>
       </nav>
     </header>
-    <!-- Buscador -->
-    <section class="Contenido-principal">
-      <section class="contenedor-buscador">
-      <input id="Buscador" type="text"placeholder="Busca un Pokémon, p.e. pikachu"/>
-      <button type="button" id="btn-buscar"><i class="fas fa-search"></i></button>
+     <!-- Pantalla 1 Inicio -->
+    <div id="pantalla_inicio">
+      <section class="Contenido-inicio">
+        <h1>Bienvenido Maestro Pokemón!!!</h1>
+          <p>Esta plataforma te ayudara a conocer los 251 pokemon, podras descubrir las caracteristicas de cada uno y ser el gran maestro pokemon</p>
+              <img id="imagen_inicio" src="imagenes/Go-fondo.jpg" style="min-width:100px">
+            <a href="https://www.pokemongo.com/es-es/"></a>
+            <!-- <audio controls>
+              <source src="Pokemon-Atrapalos Ya.mp3" type="audio/mp3">
+            </audio> -->
       </section>
+    </div>
+
+    <!-- Pantalla 2 pokemon -->
+    <div id="pantalla_pokemon">
+    <!-- Buscador -->
+      <section class="Contenido-principal">
+        <section class="contenedor-buscador">
+        <input id="Buscador" type="text" placeholder="Busca un Pokémon, p.e. pikachu"/>
+        <button type="button" id="btn-buscar"><i class="fas fa-search"></i></button>
+        </section>
+      </section>
+      <!-- Boton mostar todo -->
       <section class="contendor-filtros">
         <button type="button" id="btn-todo">Mostrar Todo</button>
       </section>
-    <!-- combobox -->
-      <section class="contenedor-ordenamiento">
-        <select id="cmb-ordenamiento">
+    <!-- Combobox -->
+    <!-- ojo cambio -->
+      <section id="cmb-ordenamiento" >
+        <select  class="contendor-ordenar-frecuencia">
           <option>Ordenalo por:</option>
           <option value="A-Z">Ordenar de a-z</option>
           <option value="Z-A">Ordenar de z-a</option>
@@ -48,24 +66,50 @@
         </select>
       </section>
       <div id="contenedor-imagenes"></div>
+      </div>
+      <!-- trajeta 3D-->
+        <!-- <div class="imagen_tarjeta">
+        <div class="tarjeta">
+          <div class="frente"></div>
+          <div class="atras"><h1>encabezado</h1></div>
+        </div>
+      </div>
+  </div> -->
+
+  <!-- pantalla Mejores Movimientos 3 -->
+  <div id="pantalla_mejores_movimientos">
+    <section class="Contenido-principal">
+    <h1>Bienvenido jugador</h1>
+    <h2>podras ver aqui los mejores movimientos de cada Pokemon </h2>
     </section>
+  </div>
+
+    <!-- pantalla top pokemon 4-->
+    <div id="pantalla_frecuencia">
+      <section id="top_frecuencia" class="Contenido-principal">
+        <select id="spawnChance" class="contendor-ordenar-frecuencia" >
+          <option selected disabled>% Fecuencia</option>
+          <option value="aparecer-alto">Alto</option>
+          <option value="aparecer-medio">Media</option>
+          <option value="aprecer-bajo">Bajo</option>
+          <option value="null">Nulo</option>
+        </select>
+        <div id= "imagenes"> </div>
+      </section>
+    </div>
+
     <!-- Pie de pagina -->
     <footer>
       <div class="container-footer">
-        <p>Derechos de autor 2020 Gonzales y Huamani © </p>
+        <p>Derechos de autor 2020 Wendy & Katy © </p>
       </div>
       <div class="row">
-        <i class="fab fa-facebook-f"> facebook </i>
-        <i class="fab fa-instagram"> instagram </i>
-        <i class="fas fa-desktop"> desktop </i>
-        <i class="fas fa-mobile-alt"> mobile </i>
-        <!-- <img src="">
-        <img src="">
-        <img src=""> -->
-
+        <i class="fab fa-facebook-f"> Facebook </i>
+        <i class="fab fa-instagram"> Instagram </i>
+        <i class="fas fa-desktop"> Desktop </i>
+        <i class="fas fa-mobile-alt"> Mobile </i>
       </div>
     </footer>
-    <!-- <div id="root"></div> -->
     <script src="main.js" type="module"></script>
   </body>
 </html>

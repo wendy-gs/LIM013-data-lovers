@@ -1,23 +1,18 @@
-body{
-
-    background:url(imagenes/fondobosque.jpg) no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-    min-height: 100%;
-    flex-wrap: wrap;
-}
 *{
     margin:0;
     padding: 0;
-    /* box-sizinvhg: border-box; */
 }
+
 header{
     width: 100%;
-    background-color: rgba(55, 219, 96, 0.877);
+    background:linear-gradient(to right,#ff2600,#1b5dd8);
+    /* background-color:#0d83d1d5; */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
 }
+
 .logo{
     width: 12%;
     min-width: 120px;
@@ -32,13 +27,11 @@ header{
     display: none;
 }
 .icono-menu{
-
     color: #fff;
     display: none;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow:0 0 3px rgb(51, 44, 44);
 }
-
 
 .menu ul{
     margin:0;
@@ -58,22 +51,25 @@ header{
 .menu li i{
     margin-right: 10px;
 }
-.Contenido-principal{
+.Contenido-inicio{
     display: flex;
-		flex-direction: column;
-		align-items: center;
+    flex-direction: column;
+    align-items: center;
+    position:bottom;
+    padding-top: 100px;
+    font-family: cursive;
 }
 
 .contenedor-buscador{
 
-		display: flex;
-		width: 100%;
+	display: flex;
+	width: 100%;
     justify-content: center;
     border: 1px solid black;
     padding: 2.5em;
     /* background-color: #161b1b; */
-
 }
+
 #btn-buscar{
     color: #fff;
     background-color: #4BAADE;
@@ -92,21 +88,75 @@ header{
     border-radius: 8px;
     border: 4px solid #4BAADE;
 }
+/* 04-09-20 combobox ordenar*/
+.contendor-ordenar-frecuencia{
+    border-radius: 10px;
+    margin-top: 20px;
+    padding:1em 2em;
+    background-color: #1658e7c7;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    
+}
+/* 04-09-20 boton mostrar todo */
+.btn-mostrar{
+    border-radius: 10px;
+    margin-top: 20px;
+    padding:1em 2em;
+    background-color: #0637a1c7;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif; 
+    display: flex;
+}
 #contenedor-imagenes{
-		width: 80%;
-		display: flex;
-		flex-wrap: wrap;
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
+/* //04-09-20 */
+#imagenes{
+    width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.Contenido-principal{
+    display: flex;
+		flex-direction: column;
+        align-items: center;
+        position:bottom;
+        padding-top: 100px;
+}
+/* 02-09-20 */
+#imagen_inicio{
+    width: 100%;
+    height: 50%;
+}
+#pantalla_pokemon{
+    display:none;
+}
+#pantalla_mejores_movimientos{
+    display:none;
+}
+#pantalla_frecuencia{
+    display:none;
+}
+.Contenido-principal{
+    display: flex;
+}
+/* 03-09-20 */
 .ficha-pokemon{
-    border: 2px solid #ee5b5b;
+    border: 3px solid #ee5b5b;
     background-color: white;
-		border-radius: 10px;
+		border-radius: 30px;
 		margin: 3% 3%;
 		padding: 2% 2%;
-    width: 24%;
-    min-width: 250px;
+    width: 28%;
+    min-width: 280px;
 }
 .ficha-pokemon button{
     border-radius: 10px;
@@ -114,10 +164,18 @@ header{
     padding:1em 2em;
     background-color: #c41818;
     color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .ficha-pokemon h2,h3{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+/* 03-09-20 */
+.ficha-frecuencia{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(22, 58, 177);
+
 }
 .ficha-contenido{
     display: flex;
@@ -126,33 +184,49 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
+
 }
+/* elimino iconos  faceb instagram  */
 footer{
     align-self: flex-end;
     position: relative;
-    background-color: #199939;
+    background-color: #092d8ff6;
     line-height: 3;
     text-align: center;
     width:100%;
-    /* display: flex; */
-    /* justify-content: space-between; */
-    }
-.container-footer{
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: rgb(253, 251, 251);
+    }
+/* tarjeta 3d
+/* .imagen_tarjeta{
+    height: 250px;
+    width: 250px;
+    margin: auto;
+    -webkit-perspective: 700;
+/* } */ 
+/* .tarjeta{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 2s;
+}  */
+/* .tarjeta:hover{
+    transform: rotateY(180deg);
 }
-.fa-facebook-f{
-    color:white;
+.lado{
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
 }
-.fa-instagram{
-    color:white;
+.frente{
+    background: #c41818;
 }
-.fa-desktop{
-    color:white;
-}
-.fa-mobile-alt{
-    color:white;
-}
+.atras{
+    background:#199939;
+    transform: rotateY(180deg);
+} */
 
 @media (max-width:760px){
     .icono-menu{
@@ -161,7 +235,7 @@ footer{
     .menu{
         position: absolute;
         margin-top:235px;
-        background:#1cdddd ;
+        background:#72b7f8 ;
         width: 100%;
         transition: all 0.5s;
         transform: translateX(-100%);
@@ -179,5 +253,4 @@ footer{
     #btn-menu:checked ~ .menu{
         transform: translateX(0%) ;
     }
-
 }

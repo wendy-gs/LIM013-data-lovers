@@ -6,20 +6,42 @@ describe('example', () => {
   it('is a function', () => {
     expect(typeof example).toBe('function');
   });
+// import {data , anotherExample } from '../src/data.js';
+import {sortSpawnChance} from '../src/data.js';
+import data from '../src/data/pokemon/pokemon.js';
+const pokemon = data.pokemon;
+// import {sortSpawnChance} from '../src/data.js';
+// import cipher from '../src/cipher';
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
+// describe('example', () => {
+//   it('is a function', () => {
+//     expect(typeof example).toBe('function');
+//   });
+
+//   it('returns `example`', () => {
+//     expect(example()).toBe('example');
+//   });
+// });
 
 
-describe('anotherExample', () => {
+// describe('anotherExample', () => {
+//   it('is a function', () => {
+//     expect(typeof anotherExample).toBe('function');
+//   });
+
+//   it('returns `anotherExample`', () => {
+//     expect(anotherExample()).toBe('OMG');
+//   });
+// });
+
+
+
+describe('sortSpawnChance', () => {
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof sortSpawnChance).toBe('function');
   });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('que vuelva la diferencia de dos pokemon sortSpawnChance', () => {
+    expect(sortSpawnChance(pokemon[0],pokemon[1]).toBe(pokemon[0] - pokemon[1]));
   });
 });*/
 //Mistest
@@ -28,3 +50,5 @@ describe('createCard', () => {
     expect(typeof createCard).toBe('function');
   });
 });
+
+

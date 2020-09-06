@@ -2,35 +2,81 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;900&family=Black+Han+Sans&family=Alfa+Slab+One&family=Sigmar+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link href="/css/all.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   </head>
   <body>
+    <!--================================================ ENCABEZADO DE TODAS LAS PESTAÑAS ========================================  -->
     <header>
       <div class="logo">
-      <img id="imagenpoke" src="/imagenes/LOGOPOK.PNG" style='min-width: 100px'>
+      <img id="imagenpoke" src="/imagenes/LOGOPOK.PNG" style="min-width:100px">
     </div>
+        <!--Para dispositivo la barra de navegacion sera solo el boton Menu con su lista-->
         <input type="checkbox" id="btn-menu">
         <label class="icono-menu" for="btn-menu"><i class="fas fa-bars"></i> Menú</label>
+        <!--Barra  de navegacion de las 4 hojas-->
       <nav class="menu">
         <ul>
-          <li><a href="#"><i class="fas fa-home"></i>Inicio</a></li>
-          <li><a href="#"><i class="fas fa-dragon"></i>Pokémon</a></li>
-          <li><a href="#"><i class="fas fa-gamepad"></i>Mejores movimientos</a></li>
-          <li><a href="#"><i class="fas fa-chart-line"></i>Top Pokémon</a></li>
+          <li><a href="#" id="menu_inicio"><i class="fas fa-home"></i>Inicio</a></li>
+          <li><a href="#" id="pestañaPokemon"><i class="fas fa-dragon"></i>Pokémon</a></li>
+          <li><a href="#" id="pestañaMovimientos"><i class="fas fa-gamepad"></i>Mejores movimientos</a></li>
+          <li><a href="#" id="estadistica"><i class="fas fa-chart-line"></i>Estadística Pokémon</a></li>
         </ul>
       </nav>
     </header>
-    <section class="Contenido-principal">
+    
+    <!--=========================================================== HOJA INICIO ==============================================  -->
+    <div id="pantalla_inicio">
+      <section class="Contenido-inicio">
+        <h1>Bienvenido Maestro Pokemón!!!</h1>
+          <p>Esta plataforma te ayudara a conocer los 251 pokemon, podras descubrir las caracteristicas de cada uno y ser el gran maestro pokemon</p>
+              <img id="imagen_inicio" src="imagenes/Go-fondo.jpg" style="min-width:100px">
+            <a href="https://www.pokemongo.com/es-es/"></a>
+            <!-- <audio controls>
+              <source src="Pokemon-Atrapalos Ya.mp3" type="audio/mp3">
+            </audio> -->
+      </section>
+    </div>
+    <!--=========================================================== HOJA DE POKEMON==============================================  -->
+    <section class="hoja-pokemon ocultarElemento">
+      <!-- Contenedor Busqueda por nombre de pokémon-->
       <section class="contenedor-buscador">
-      <input id="Buscador" type="text"placeholder="Busca un Pokémon, p.e. pikachu"/>
-      <button type="button" id="btn-buscar"><i class="fas fa-search"></i></button>
+      <input id="itBusqueda" type="text" placeholder="Busca un Pokémon, p.e. pikachu"/>
+      <button type="button" id="btn-todo">Mostrar Todo</button>
       </section>
-      <section class="contendor-filtros">
-        <button type="button" id="btn-todo">Mostrar Todo</button>
+      <!-- Contenedor de filtros pokémon-->
+      <section id="filter" class="contenedor-filtros">
+        <nav class="menu-filtro">
+          <a href="#" id="tipo" name="tipo" class="btn-filtro">Tipo ▼</a>
+          <a href="#" id="generacion" name="generacion" class="btn-filtro">Generación ▼</a>
+          <a href="#" id="huevo" name="huevo" class="btn-filtro">Huevo ▼</a>
+          <!--PARTE KATY-->
+          <a href="#" id="aparicion" name="aparicion" class="btn-filtro">% Aparición ▼</a>
+
+        </nav>
+        <div id="filtro-tipo" class="filtro"></div>
+        <div id="filtro-generacion" class="filtro">
+          <a href="#" name="kanto" class="generacion">Kanto (i)</a>
+          <a href="#" name="johto" class="generacion">Johto (ii)</a>
+        </div>
+        <div id="filtro-huevo" class="filtro">
+          <a href="#" name="2 km" class="huevo">2 km</a>
+          <a href="#" name="5 km" class="huevo">5 km</a>
+          <a href="#" name="7 km" class="huevo">7 km</a>
+          <a href="#" name="10 km" class="huevo">10 km</a>
+        </div>
+        <!--PARTE KATY-->
+        <div id="filtro-aparicion" class="filtro">
+          <a href="#" name="Alto" class="aparicion">Alto</a>
+          <a href="#" name="Medio" class="aparicion">Medio</a>
+          <a href="#" name="Bajo" class="aparicion">Bajo</a>
+          <a href="#" name="Nulo" class="aparicion">Nulo</a>
+        </div>
+
       </section>
+      <!-- Contenedor de combobox de orden-->
       <section class="contenedor-ordenamiento">
         <select id="cmb-ordenamiento">
           <option>Ordenalo por:</option>
@@ -40,10 +86,50 @@
           <option value="251-1">Ordenar descendente(251-1)</option>
         </select>
       </section>
+      <!-- Contenedor de las fichas pokemon-->
+      <p id="titulo-pokemon"></p>
       <div id="contenedor-imagenes"></div>
-  
     </section>
-    <div id="root"></div>
+    <!---------------------VENTANA MODAL DE LA PAGINA POKEMON ------------------------>
+    <section id="ctn-modal" class="contenedor-modal">
+      <div id="modal" class="contenido-modal modal-close">
+      </div>
+    </section>
+
+  <!--=========================================================== HOJA MOVIMIENTO==============================================  --> 
+    <section class="hoja-movimientos ocultarElemento">
+      <div class="header-movimiento"></div>
+      <div class="section-movimiento"></div>
+      <div class="footer-movimiento"></div>
+    </section>
+    
+  <!--=========================================================== HOJA ESTADISTICA==============================================  -->  
+    <section class="hoja-estadistico ocultarElemento">
+      <div class="header-estadistico"></div>
+      <div class="nav-estadistico filtro mostrarElemento"></div>
+      <div class="section-estadistico ">
+        <!--Es el contenedor que tendra la grafica creada con chart.js-->
+        <div class="contenedor-estadistico">
+         <canvas id="myChart" ></canvas>
+        </div>
+        <div class="resultadoCalculo"></div>
+    </div>
+    </section>
+  
+   <!--================================================ FOOTER DE TODAS LAS PESTAÑAS ========================================  -->
+   <!--
+      <div class="container-footer">
+        <p>Derechos de autor 2020 Gonzales y Huamani © </p>
+      </div>
+      <div class="row">
+        <i class="fab fa-facebook-f"> facebook </i>
+        <i class="fab fa-instagram"> instagram </i>
+        <i class="fas fa-desktop"> desktop </i>
+        <i class="fas fa-mobile-alt"> mobile </i>
+      </div>
+  -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
     <script src="main.js" type="module"></script>
   </body>
 </html>

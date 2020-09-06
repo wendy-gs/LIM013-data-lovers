@@ -1,6 +1,7 @@
-import { example, anotherExample } from '../src/data.js';
+import { createCard} from '../src/data.js';
 
-
+//import { createCard, example, anotherExample } from '../src/data.js';
+/*
 describe('example', () => {
   it('is a function', () => {
     expect(typeof example).toBe('function');
@@ -19,5 +20,11 @@ describe('anotherExample', () => {
 
   it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
+  });
+});*/
+//Mistest
+describe('createCard', () => {
+  it('is a function', () => {
+    expect(typeof createCard).toBe('function');
   });
 });

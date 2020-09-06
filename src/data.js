@@ -7,55 +7,79 @@ export const example = () => {
 export const anotherExample = () => {
   return 'OMG';
 };
-// Funcion que crea las  tarjetas
-const createCard=(pokemon)=>{
-  return `
-  <div class="ficha-pokemon">
-  	<h2> N°${pokemon.num}</h2>
-    <div class="ficha-contenido">
-			<img src="${pokemon.img}">
-			<div class="ficha-boton">
-  			<h3> ${pokemon.name}</h3>
-				 <button>Ficha</button>
-			</div>	 
-    </div>
-  </div>`
-}
-//Funcion que muestra los pokemon
-export const show=(data)=>{
-  return `${data.map(createCard).join('')}`
-  
-}
-//Funcion que filtra
+
+//FUNCION FILTRO
 export const filterData=(data,type,condicion)=>{
+  let resultado="";
   switch(type){
     case "name":
-      const resultado=data.filter(poke=>poke.name===condicion);
-      return `${resultado.map(createCard)}`
+      resultado=data.filter(poke=>poke.name===condicion);
       break;
+    case "tipo":
+      resultado=data.filter(poke=>poke.type.includes(condicion));
+      break;
+    case "generacion":
+      resultado=data.filter(poke=>poke.generation.name===condicion);
+      break;
+    case "huevo":
+      resultado=data.filter(poke=>poke.egg===condicion);
+      break;
+    case "caramelo":
+      resultado=data.filter(poke=>poke.evolution.candy===condicion);
+      break;
+    case "letra":
+      const expresion=new RegExp(condicion,"i"); 
+      resultado=data.filter(poke=>expresion.test(poke.name));
+      break; 
+    case "aparicion":
+        switch(condicion){
+        case "Alto":
+          resultado=data.filter(pokemon => parseFloat(pokemon['spawn-chance']) > 5.10 && parseFloat(pokemon['spawn-chance']) < 16.00);
+          break;
+        case "Medio":
+           resultado= data.filter(pokemon => parseFloat(pokemon['spawn-chance']) > 2.51 && parseFloat(pokemon['spawn-chance']) < 5.00);
+           break;
+        case "Bajo":
+           resultado=data.filter(pokemon => parseFloat(pokemon['spawn-chance']) >= 0.00 && parseFloat(pokemon['spawn-chance']) < 2.50);
+           break;
+        case "Nulo":
+           resultado=data.filter(pokemon => pokemon['spawn-chance'] === null);;
+           break;
+        }
   }
+ return resultado;
 }
-//funcion ordenamiento numerico
-const compare=(a,b)=>{
-  if(a.name>b.name){
-    return 1;
-  }
-  if(a.name<b.name){
-    return -1
-  }
-  return 0;
-}
-//Funcion que ordena
-export const sortData=(data,sortBy,sortOrder)=>{
-  switch(sortBy){
-    case "number":
-      if(sortOrder==="upward"){
-        data.sort(compare);
-        return `${data.map(createCard)}`
-        break;
-      }else{
-        return "hola"
-      }
-  }
 
+//FUNCION ORDENA
+export const sortData=(data,sortBy)=>{
+  switch(sortBy){
+    case "A-Z":
+      data.sort((a,b)=>a.name.localeCompare(b.name));;
+      break;
+    case "Z-A":
+      data.sort((a,b)=>b.name.localeCompare(a.name));
+      break;   
+    case "1-251":
+      data.sort((a,b)=>a.num-b.num)
+      break;      
+    case "251-1":
+        data.sort((a,b)=>b.num-a.num);
+        break;
+    case "Aparicion":
+        data.sort((pokemon1,pokemon2)=>pokemon2['spawn-chance'] - pokemon1['spawn-chance']);
+        break;
+    default:
+      data.sort((a,b)=>a.num-b.num);
+        break;      
+  }
+  return data;
+}
+//FUNCION CALCULA
+export const computeStats=(data,type)=>{
+  let totalTipos=[];
+  let cantidad=filterData(data,"tipo",type).length;
+  let porcentaje=(cantidad/251)*100;
+  totalTipos.push(cantidad);
+  totalTipos.push(Math.round(porcentaje* 100)/ 100);
+  return totalTipos;
 }

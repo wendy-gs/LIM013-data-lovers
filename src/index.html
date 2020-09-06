@@ -28,7 +28,7 @@
         </ul>
       </nav>
     </header>
-     <!-- Pantalla 1 Inicio -->
+     <!---------------------------------------------------------- Pantalla 1 Inicio ---------------------------------------------------------->
     <div id="pantalla_inicio">
       <section class="Contenido-inicio">
         <h1>Bienvenido Maestro Pokemón!!!</h1>
@@ -42,21 +42,32 @@
     </div>
 
     <!-- Pantalla 2 pokemon -->
-    <div id="pantalla_pokemon">
-    <!-- Buscador -->
-      <section class="Contenido-principal">
-        <section class="contenedor-buscador">
-        <input id="Buscador" type="text" placeholder="Busca un Pokémon, p.e. pikachu"/>
-        <button type="button" id="btn-buscar"><i class="fas fa-search"></i></button>
-        </section>
+    <!-- =========================================================== HOJA DE POKEMON==================================================================!--> 
+      <section class="hoja-pokemon ocultarElemento" >
+      <section class="contenedor-buscador ">
+      <input id="itBusqueda" type="text" placeholder="Busca un Pokémon, p.e. pikachu"/>
+      <button type="button" id="btn-todo">Mostrar Todo</button>
       </section>
-      <!-- Boton mostar todo -->
-      <section class="contendor-filtros">
-        <button type="button" id="btn-todo">Mostrar Todo</button>
+      <!-- -------Contenedor de filtros pokémon-->
+      <section id="filter" class="contenedor-filtros">
+        <nav class="menu-filtro">
+          <a href="#" id="tipo" name="tipo" class="btn-filtro">Tipo ▼</a>
+          <a href="#" id="generacion" name="generacion" class="btn-filtro">Generación ▼</a>
+          <a href="#" id="huevo" name="huevo" class="btn-filtro">Huevo ▼</a>
+        </nav>
+        <div id="filtro-tipo" class="filtro"></div>
+        <div id="filtro-generacion" class="filtro">
+          <a href="#" name="kanto" class="generacion">Kanto (i)</a>
+          <a href="#" name="johto" class="generacion">Johto (ii)</a>
+        </div>
+        <div id="filtro-huevo" class="filtro">
+          <a href="#" name="2 km" class="huevo">2 km</a>
+          <a href="#" name="5 km" class="huevo">5 km</a>
+          <a href="#" name="7 km" class="huevo">7 km</a>
+          <a href="#" name="10 km" class="huevo">10 km</a>
+        </div>
       </section>
-    <!-- Combobox -->
-    <!-- ojo cambio -->
-      <section id="cmb-ordenamiento" >
+      <section id="cmb-ordenamiento" class="contenedor-ordenamiento ocultarElemento" >
         <select  class="contendor-ordenar-frecuencia">
           <option>Ordenalo por:</option>
           <option value="A-Z">Ordenar de a-z</option>
@@ -65,8 +76,19 @@
           <option value="251-1">Ordenar descendente(251-1)</option>
         </select>
       </section>
-      <div id="contenedor-imagenes"></div>
-      </div>
+       <!-- Contenedor de las fichas pokemon-->
+       <p id="titulo-pokemon"></p>
+       <div id="contenedor-imagenes"></div>
+     </section>
+    </section>
+  <!---------------------VENTANA MODAL DE LA PAGINA POKEMON ------------------------>
+      <section id="ctn-modal" class="contenedor-modal">
+        <div id="modal" class="contenido-modal modal-close">
+        </div>
+      </section>
+
+
+
       <!-- trajeta 3D-->
         <!-- <div class="imagen_tarjeta">
         <div class="tarjeta">
@@ -77,14 +99,7 @@
   </div> -->
 
   <!-- pantalla Mejores Movimientos 3 -->
-  <div id="pantalla_mejores_movimientos">
-    <section class="Contenido-principal">
-    <h1>Bienvenido jugador</h1>
-    <h2>podras ver aqui los mejores movimientos de cada Pokemon </h2>
-    </section>
-  </div>
-
-    <!-- pantalla top pokemon 4-->
+  <section class="hoja-movimientos ocultarElemento" >
     <div id="pantalla_frecuencia">
       <section id="top_frecuencia" class="Contenido-principal">
         <select id="spawnChance" class="contendor-ordenar-frecuencia" >
@@ -97,6 +112,21 @@
         <div id= "imagenes"> </div>
       </section>
     </div>
+</section>
+    <!-- pantalla top pokemon 4-->
+ <!--=========================================================== HOJA ESTADISTICA==============================================  -->  
+ <section class="hoja-estadistico ocultarElemento">
+  <div class="header-estadistico"></div>
+  <div class="nav-estadistico filtro mostrarElemento"></div>
+  <div class="section-estadistico ocultarElemento">
+    <!--Es el contenedor que tendra la grafica creada con chart.js-->
+    <div class="contenedor-estadistico">
+     <canvas id="myChart" ></canvas>
+    </div>
+    <div class="resultadoCalculo"></div>
+</div>
+</section>
+
 
     <!-- Pie de pagina -->
     <footer>

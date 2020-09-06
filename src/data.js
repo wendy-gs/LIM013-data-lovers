@@ -8,6 +8,33 @@ export const anotherExample = () => {
   return 'OMG';
 };
 
+//FUNCION FILTRO
+export const filterData=(data,type,condicion)=>{
+  let resultado="";
+  switch(type){
+    case "name":
+      resultado=data.filter(poke=>poke.name===condicion);
+      break;
+    case "tipo":
+      resultado=data.filter(poke=>poke.type.includes(condicion));
+      break;
+    case "generacion":
+      resultado=data.filter(poke=>poke.generation.name===condicion);
+      break;
+    case "huevo":
+      resultado=data.filter(poke=>poke.egg===condicion);
+      break;
+    case "caramelo":
+      resultado=data.filter(poke=>poke.evolution.candy===condicion);
+      break;
+    case "letra":
+      const expresion= new RegExp(condicion,"i"); 
+      resultado=data.filter(poke=>expresion.test(poke.name));
+      break;
+  }
+ return resultado;
+}
+
 
 
 // Ordena de forma ascendente,descendente,

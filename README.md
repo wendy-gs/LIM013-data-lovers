@@ -22,6 +22,8 @@ Brindar al usuario información util para conocer mejor a los personajes de poke
 ## 2. Proceso de Diseño
 
 Primero definimos los usuarios con los que debiamos trabajar, identificando sus necesidades.
+Herramienta utilizada Encuesta
+imagen
 
 #### Prototipo de baja fidelidad
 

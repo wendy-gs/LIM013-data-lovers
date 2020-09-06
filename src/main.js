@@ -45,11 +45,51 @@ const attack=(pok)=>{
 	const array=pok["special-attack"];
 	let ataque="";
 	for(let i=0;i<array.length;i++){
-		ataque+=`<span class="ataque">${array[i].name}</span>`
+		ataque+=`<span class="ataque">${array[i].name}</span><br>`
 	}
 	return ataque;
 }
-//FUNCION QUE CREA LOS DATOS EN LA VENTANA MODAL
+//FUNCION QUE CREA LOS DATOS EN LA VENTANA MODAL PARA CELULAR
+const creatreModalCelular=(pokemon)=>{
+	return `
+	<p class="close-modal">X</p>
+	<div class="modal-encabezado-celular">
+		<h2> ${pokemon.name.toUpperCase()}</h2>
+		<h3>Tipo: ${typePokemon(pokemon)}</h3>
+	</div>
+	<div class="modal-seccion-celular">
+		<div class="seccion-imagen seccion-item">
+			<img class="item-imagen" src="${pokemon.img}">
+		</div>		
+	</div>	
+	<div class="modal-footer-celular">
+		<div class="footer-puntos-celular">
+			<table class="tabla-puntos">
+				<caption><strong>PUNTOS BASE</strong></caption>
+			<tr>
+		 		<th>Ataque</th>
+	  		 	<td>${pokemon.stats["base-attack"]}</td>
+			</tr>
+			<tr>
+		 		<th>Defensa</th>
+	  		 	<td>${pokemon.stats["base-defense"]}</td>
+			</tr>
+			<tr>
+		 		<th>Maximo CP</th>
+	  		 	<td>${pokemon.stats["max-cp"]}</td>
+			</tr>
+			<tr>
+		 		<th>Ataque Especial</th>
+	  		 	<td>${attack(pokemon)}</td>
+			</tr>
+	  
+	  		</table>
+		</div>
+	</div>
+	`
+}
+
+//FUNCION QUE CREA LOS DATOS EN LA VENTANA MODAL PARA ESCRITORIO
 const createModal=(pokemon)=>{
 	return `
 	<p class="close-modal">X</p>
@@ -137,8 +177,10 @@ const createCard=(pokemon)=>{
   <div class="ficha-pokemon">
     <h1 > N°${pokemon.num}</h1>
     <h2> ${pokemon.name}</h2>
-    <div class="ficha-contenido">
-			<img src="${pokemon.img}">
+		<div class="ficha-contenido">
+			<div class="ficha-imagen">
+				<img id="img-ficha-pokemon" src="${pokemon.img}">
+			</div>
 			<div class="ficha-boton">
         <h3><strong>Generación: </strong> ${pokemon.generation.name}</h3>
 				<h3><strong>Huevo: </strong> ${pokemon.egg}</h3>
@@ -153,6 +195,10 @@ const createCard=(pokemon)=>{
 const showModal=(data)=>{
 	return `${data.map(createModal).join('')}`
 }
+//FUNCION QUE MOSTRARA LA VENTANA MODAL EN CELULAR Y TABLET
+const showModalCelular=(data)=>{
+	return `${data.map(creatreModalCelular).join('')}`
+}
 //FUNCION QUE MOSTRARA LAS CARD CREADAS
 const show=(data)=>{
   return `${data.map(createCard).join('')}`
@@ -160,12 +206,19 @@ const show=(data)=>{
 //CREAMOS LA FUNCION QUE ABRIRA LA VENTANA MODAL AL HACER CLICK EN VER FICHA POKEMON
 const fillModal=(boton)=>{
 	boton.addEventListener("click",function(evt){
+		//prueba de capturar ancho de la pantalla
+		const ancho=screen.width;
 		const pokemon=evt.target.id;
 		let modal=document.getElementById("modal");
 		let cmodal=document.getElementById("ctn-modal");
 		cmodal.style.visibility="visible";
 		modal.classList.remove("modal-close");
+		if(ancho<760){
+			modal.innerHTML=showModalCelular(filterData(data.pokemon,"name",pokemon));
+		}else{
 		modal.innerHTML=showModal(filterData(data.pokemon,"name",pokemon));
+		}
+
 		let close=document.querySelectorAll(".close-modal")[0];
 		close.addEventListener("click",function(e){
 			modal.classList.add("modal-close");
@@ -321,6 +374,8 @@ const showSheetPokemon=()=>{
 	//MOSTRAMOS ELEMENTOS
 	hojaPokemon.classList.remove("ocultarElemento");
 	showAll(data.pokemon);
+
+	
 
 }
 document.getElementById("pestañaPokemon").addEventListener("click",showSheetPokemon);

@@ -177,7 +177,7 @@ body{
 	margin: 3% 2%;
 	padding: 1% 1.5%;
   width: 26%;
-	min-width: 250px;
+	min-width: 255px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -218,10 +218,17 @@ body{
 	align-self: flex-start;
 	font-size: 1.1em;
 }
+.ficha-imagen{
+display: flex;
+}
+#img-ficha-pokemon{
+	width: 100%
+	
+}
 .ficha-contenido{
 		display: flex;
 		width: 100%;
-		padding: 2% 7%;
+		padding: 2% 6%;
 		justify-content: center;
 }
 .ficha-boton{
@@ -301,9 +308,8 @@ span{
 	font-size: 14px;
 	width: 120%;
 }
+/* ===============================================VENTANA MODAL========================================*/
 .contenedor-modal{
-	/*background-image: linear-gradient(to top,#d9ded8   0%, #ebc0fd 100%);*/
-/*	background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);*/
 	visibility: hidden;/*lo ocultamos al inidico*/
 	position: fixed;/*hace que salga del flujo y desaparesca*/
 	width: 100%;
@@ -450,7 +456,6 @@ th{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	
 }
 .item-footer{
 	width: 50%;
@@ -462,6 +467,34 @@ th{
 	padding: 2%;
 	background: #fff;
 }
+/*=============================MODAL PARA CELULAR============*/
+.modal-encabezado-celular{
+		display: flex;
+		flex-direction: column;
+		justify-content:center;
+		padding-top:2% ;
+		padding-bottom:1% ;
+		border-bottom:4.5px solid #6783DC;
+		background: #CEF2E8;
+}
+.modal-seccion-celular{
+	display: flex;
+	justify-content:center;
+	height: 30%;
+	padding-top: 1.5%;
+}
+.modal-footer-celular{
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	padding-top: 5%;
+}
+.footer-puntos-celular{
+	width: 98%;
+	color: #45506B;
+}
+
+/**/
 .hoja-estadistico{
 	display: flex;
 	flex-direction: column;

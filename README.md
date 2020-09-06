@@ -28,13 +28,13 @@ imagen
 
 Luego de tener listo el prototipo pedimos a nuestros usuarios que interactuen y nos brinden sugerencia si algo no le agradaba o si se debia mejorar, nos dieron feedback y entedimos mejor sus nesecidades. asi que decidimos mejorar ciertos puntos.
 
-![1er Prototipo de baja fidelidad](https://ibb.co/F8zJS2p][img]https://i.ibb.co/BTBjXbk/prototipo-baja.jpg)
+![1er Prototipo de baja fidelidad](https://i.ibb.co/BTBjXbk/prototipo-baja.jpg)
 
 ## 2do Prototipo de baja fidelidad
 
 Luego de recibir feedback por el pirmer prototipo mejoramos la vista de la pantalla inicial de la web,la ubicación de los botones y la información en la ficha de de cada pokemón.
 
-![2do Prototipo de baja fidelidad](imagen)
+![2do Prototipo de baja fidelidad](https://i.ibb.co/F8zJS2p/prototipo-baja.jpg)
 
 #### Prototipo de alta fidelidad
 
@@ -44,10 +44,15 @@ Lo testeamos nuevamente con 1 usuario y nos hizo notar que la barra donde mostr�
 
 ![1er prototipo de alta fidelidad](https://i.ibb.co/GPbf4tH/pantalla-inicio-1.png)
 
-![2do Prototipo de baja fidelidad](https://ibb.co/565cmkL][img]https://i.ibb.co/FKB72Xz/pantala-busqueda-2.png)
+## 2do Prototipo de alta fidelidad
+
+![2do Prototipo de baja fidelidad](https://i.ibb.co/FKB72Xz/pantala-busqueda-2.png)
+
+## 3er Prototipo de alta fidelidad
 
 ![3er Prototipo de alta fidelidad](https://i.ibb.co/T4Yb4Vf/pantalla-mobile.png)
 
+## Versión Final
 
 ## Versión Desktop
 ![Vista 1 de la web](./img_readme/vista1.gif)
@@ -55,11 +60,6 @@ Lo testeamos nuevamente con 1 usuario y nos hizo notar que la barra donde mostr�
 
 ## Versión Mobile
 ![vista 1 de la web](./img_readme/vista_mobile.gif)
-
-
-
-
-
 
 
 

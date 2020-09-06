@@ -10,7 +10,7 @@
 
 ## 1. Descripción general del proyecto
 
-"Pokedex" es un sitio web en el cual el usuario podrá encontrar toda la información nesecesaria para ser un maestro pokemón. Podras conocer los 251 pokemón y descubrir las caracteristicas de cada uno de los personajes mediante la barra de menú donde la sección Pokemón te permite conocer los tipos (agua,volador electrico,etc),ordenarlos de forma (alfabetica y por númerica ),la sección mejores movimientos te permite conocer a los pokemon con maximo poder y  el top de frecuencia pokemón donde descubriras el rago de aparición de cada uno.
+"Pokedex" es un sitio web en el cual el usuario podrá encontrar toda la información necesesaria para ser un maestro pokemón. Podras conocer los 251 pokemón y descubrir las caracteristicas de cada uno de los personajes mediante la barra de menú donde la sección Pokemón te permite conocer los tipos (agua,volador electrico,etc),ordenarlos de forma (alfabetica y por númerica ),la sección mejores movimientos te permite conocer a los pokemon con maximo poder y  el top de frecuencia pokemón donde descubriras el rago de aparición de cada uno.
 
 ***
 ## Objetivo de la página
@@ -18,9 +18,11 @@ Brindar al usuario información util para conocer mejor a los personajes de poke
 ***
 ## 2. Proceso de Diseño
 
-Primero definimos los usuarios con los que debiamos trabajar, identificando sus necesidades.
-Herramienta utilizada Encuesta
-imagen
+Definimos los usuarios con los que debiamos trabajar, identificando sus necesidades mediante algunas herramientas como encuestas y entrevista.
+
+# Herramienta utilizada Encuesta
+
+* [ ] [Formulario Pokemon Go](https://docs.google.com/forms/d/1OrBnrMdVOqaccFwH-cJHA4WXxqMFA9lCkvTpM5nvCdw/edit)
 
 #### Prototipo de baja fidelidad
 
@@ -34,7 +36,7 @@ Luego de tener listo el prototipo pedimos a nuestros usuarios que interactuen y 
 
 Luego de recibir feedback por el pirmer prototipo mejoramos la vista de la pantalla inicial de la web,la ubicación de los botones y la información en la ficha de de cada pokemón.
 
-![2do Prototipo de baja fidelidad](https://i.ibb.co/F8zJS2p/prototipo-baja.jpg)
+![2do Prototipo de baja fidelidad](https://i.ibb.co/Dp1NdJb/prototipo-baja2.jpg)
 
 #### Prototipo de alta fidelidad
 
@@ -48,7 +50,7 @@ Lo testeamos nuevamente con 1 usuario y nos hizo notar que la barra donde mostr�
 
 ![2do Prototipo de baja fidelidad](https://i.ibb.co/FKB72Xz/pantala-busqueda-2.png)
 
-## 3er Prototipo de alta fidelidad
+## 3er Prototipo de alta fidelidad versión mobile
 
 ![3er Prototipo de alta fidelidad](https://i.ibb.co/T4Yb4Vf/pantalla-mobile.png)
 

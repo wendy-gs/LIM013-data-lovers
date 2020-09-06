@@ -587,21 +587,21 @@ footer{
         transform: translateX(0%) ;
     }
 }
-/* tarjeta 3d
-/* .imagen_tarjeta{
+/* tarjeta 3d */
+ /* .imagen_tarjeta{
     height: 250px;
     width: 250px;
     margin: auto;
-    -webkit-perspective: 700;
-/* } */
-/* .tarjeta{
+	-webkit-perspective: 700;
+}
+.tarjeta{
     height: 100%;
     width: 100%;
     position: relative;
     transform-style: preserve-3d;
     transition: 2s;
-}  */
-/* .tarjeta:hover{
+}
+.tarjeta:hover{
     transform: rotateY(180deg);
 }
 .lado{
@@ -616,34 +616,5 @@ footer{
 .atras{
     background:#199939;
     transform: rotateY(180deg);
-} */
-
-/* @media (max-width:760px){
-    .icono-menu{
-        display: block;
-    }
-    .menu{
-        position: absolute;
-        margin-top:235px;
-        background:#72b7f8 ;
-        width: 100%;
-        transition: all 0.5s;
-        transform: translateX(-100%);
-    }
-    .menu ul{
-        flex-direction: column;
-    }
-    .menu li{
-        border-top: 1px solid #fff;
-    }
-    .menu li a{
-    padding: 10px;
-
-    }
-    #btn-menu:checked ~ .menu{
-        transform: translateX(0%) ;
-    }
 }
-.ocultarElemento{
-    display: none;
-} */
+ */

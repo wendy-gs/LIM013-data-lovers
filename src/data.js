@@ -27,10 +27,10 @@ export const filterData=(data,type,condicion)=>{
     case "caramelo":
       resultado=data.filter(poke=>poke.evolution.candy===condicion);
       break;
-    case "letra":
+    case "letra":{
       const expresion=new RegExp(condicion,"i"); 
       resultado=data.filter(poke=>expresion.test(poke.name));
-      break; 
+      break; }
     case "aparicion":
         switch(condicion){
         case "Alto":
@@ -43,7 +43,7 @@ export const filterData=(data,type,condicion)=>{
            resultado=data.filter(pokemon => parseFloat(pokemon['spawn-chance']) >= 0.00 && parseFloat(pokemon['spawn-chance']) < 2.50);
            break;
         case "Nulo":
-           resultado=data.filter(pokemon => pokemon['spawn-chance'] === null);;
+           resultado=data.filter(pokemon => pokemon['spawn-chance'] === null);
            break;
         }
   }
@@ -54,7 +54,7 @@ export const filterData=(data,type,condicion)=>{
 export const sortData=(data,sortBy)=>{
   switch(sortBy){
     case "A-Z":
-      data.sort((a,b)=>a.name.localeCompare(b.name));;
+      data.sort((a,b)=>a.name.localeCompare(b.name));
       break;
     case "Z-A":
       data.sort((a,b)=>b.name.localeCompare(a.name));
@@ -78,8 +78,9 @@ export const sortData=(data,sortBy)=>{
 export const computeStats=(data,type)=>{
   let totalTipos=[];
   let cantidad=filterData(data,"tipo",type).length;
-  let porcentaje=(cantidad/251)*100;
+  let porcentaje=(cantidad/data.length)*100;
   totalTipos.push(cantidad);
   totalTipos.push(Math.round(porcentaje* 100)/ 100);
   return totalTipos;
+ 
 }

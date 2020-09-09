@@ -45,11 +45,51 @@ const attack=(pok)=>{
 	const array=pok["special-attack"];
 	let ataque="";
 	for(let i=0;i<array.length;i++){
-		ataque+=`<span class="ataque">${array[i].name}</span>`
+		ataque+=`<span class="ataque">${array[i].name}</span><br>`
 	}
 	return ataque;
 }
-//FUNCION QUE CREA LOS DATOS EN LA VENTANA MODAL
+//FUNCION QUE CREA LOS DATOS EN LA VENTANA MODAL PARA CELULAR
+const creatreModalCelular=(pokemon)=>{
+	return `
+	<p class="close-modal">X</p>
+	<div class="modal-encabezado-celular">
+		<h2> ${pokemon.name.toUpperCase()}</h2>
+		<h3>Tipo: ${typePokemon(pokemon)}</h3>
+	</div>
+	<div class="modal-seccion-celular">
+		<div class="seccion-imagen seccion-item">
+			<img class="item-imagen" src="${pokemon.img}">
+		</div>		
+	</div>	
+	<div class="modal-footer-celular">
+		<div class="footer-puntos-celular">
+			<table class="tabla-puntos">
+				<caption><strong>PUNTOS BASE</strong></caption>
+			<tr>
+		 		<th>Ataque</th>
+	  		 	<td>${pokemon.stats["base-attack"]}</td>
+			</tr>
+			<tr>
+		 		<th>Defensa</th>
+	  		 	<td>${pokemon.stats["base-defense"]}</td>
+			</tr>
+			<tr>
+		 		<th>Maximo CP</th>
+	  		 	<td>${pokemon.stats["max-cp"]}</td>
+			</tr>
+			<tr>
+		 		<th>Ataque Especial</th>
+	  		 	<td>${attack(pokemon)}</td>
+			</tr>
+	  
+	  		</table>
+		</div>
+	</div>
+	`
+}
+
+//FUNCION QUE CREA LOS DATOS EN LA VENTANA MODAL PARA ESCRITORIO
 const createModal=(pokemon)=>{
 	return `
 	<p class="close-modal">X</p>
@@ -137,12 +177,14 @@ const createCard=(pokemon)=>{
   <div class="ficha-pokemon">
     <h1 > N°${pokemon.num}</h1>
     <h2> ${pokemon.name}</h2>
-    <div class="ficha-contenido">
-			<img src="${pokemon.img}">
+		<div class="ficha-contenido">
+			<div class="ficha-imagen">
+				<img id="img-ficha-pokemon" src="${pokemon.img}">
+			</div>
 			<div class="ficha-boton">
         <h3><strong>Generación: </strong> ${pokemon.generation.name}</h3>
 				<h3><strong>Huevo: </strong> ${pokemon.egg}</h3>
-				<h3> frecuencia: ${parseFloat(pokemon['spawn-chance'] * 100).toFixed(2)}% </h3>
+				<h3><strong> frecuencia:</strong> ${parseFloat(pokemon['spawn-chance'] * 100).toFixed(2)}% </h3>
         <h3> ${typePokemon(pokemon)}</h3>
       </div>	 
     </div>
@@ -153,6 +195,10 @@ const createCard=(pokemon)=>{
 const showModal=(data)=>{
 	return `${data.map(createModal).join('')}`
 }
+//FUNCION QUE MOSTRARA LA VENTANA MODAL EN CELULAR Y TABLET
+const showModalCelular=(data)=>{
+	return `${data.map(creatreModalCelular).join('')}`
+}
 //FUNCION QUE MOSTRARA LAS CARD CREADAS
 const show=(data)=>{
   return `${data.map(createCard).join('')}`
@@ -160,14 +206,22 @@ const show=(data)=>{
 //CREAMOS LA FUNCION QUE ABRIRA LA VENTANA MODAL AL HACER CLICK EN VER FICHA POKEMON
 const fillModal=(boton)=>{
 	boton.addEventListener("click",function(evt){
+		//prueba de capturar ancho de la pantalla
+		const ancho=screen.width;
 		const pokemon=evt.target.id;
+		
 		let modal=document.getElementById("modal");
 		let cmodal=document.getElementById("ctn-modal");
 		cmodal.style.visibility="visible";
 		modal.classList.remove("modal-close");
+		if(ancho<760){
+			modal.innerHTML=showModalCelular(filterData(data.pokemon,"name",pokemon));
+		}else{
 		modal.innerHTML=showModal(filterData(data.pokemon,"name",pokemon));
+		}
+
 		let close=document.querySelectorAll(".close-modal")[0];
-		close.addEventListener("click",function(e){
+		close.addEventListener("click",function(){
 			modal.classList.add("modal-close");
 			setTimeout(function(){
 				cmodal.style.visibility="hidden";
@@ -192,13 +246,13 @@ const showInicio=()=>{
 	hojaMovimiento.classList.add("ocultarElemento");
 	hojaEstadistico.classList.add("ocultarElemento");
 	//MOSTRAMOS ELEMENTOS
-	pantalla_inicio.classList.remove("ocultarElemento")
+	pantalla_inicio.classList.remove("ocultarElemento");
 }
 document.getElementById("menu_inicio").addEventListener("click",showInicio)
 
 //============================================PESTAÑA POKEMON========================================================================
 //VARIABLES UNIVERSALES PARA TRAER DEL DOM
-let hojaPokemon=document.querySelectorAll(".hoja-pokemon")[0];
+let hojaPokemon=document.querySelector(".hoja-pokemon");
 let containerImg=document.getElementById("contenedor-imagenes");
 let title=document.getElementById("titulo-pokemon");
 let typeGeneration=document.querySelectorAll("div.filtro > a.generacion");
@@ -208,8 +262,6 @@ let filtroGeneracion=document.getElementById("filtro-generacion");
 let filtroHuevo=document.getElementById("filtro-huevo");
 let filtroTipo=document.getElementById("filtro-tipo");
 let filtroAparicion=document.getElementById("filtro-aparicion");
-
-
 let butonFichas="";
 //-----------------------------FUNCION QUE MUESTRA TODOS LOS POKEMON -----------------------------------
 const showAll=()=>{
@@ -232,6 +284,7 @@ const searchLetter=()=>{
 		butonFichas=document.querySelectorAll("button.btn-modal");
 		butonFichas.forEach(fillModal);
 	}else{
+		title.innerHTML="";
 		containerImg.innerHTML="No se encontro pokemon";
 	}
 }
@@ -255,9 +308,7 @@ for(let i=0;i<newArrayTypes.length;i++){
 const filtrado=(boton)=>{
 	boton.addEventListener("click", function(evt){
 	const hijo = evt.target.name;
-	console.log(hijo);
 	const tipoFiltro=evt.target.className;
-	console.log(tipoFiltro);
 	arreglo=filterData(data.pokemon,tipoFiltro,hijo);//guardo en mi array temporal la nueva data a mostrarse}
 	if(tipoFiltro==="aparicion"){
 		const dataAparicion=sortData(arreglo,"Aparicion");
@@ -322,15 +373,17 @@ const showSheetPokemon=()=>{
 	hojaPokemon.classList.remove("ocultarElemento");
 	showAll(data.pokemon);
 
+	
+
 }
 document.getElementById("pestañaPokemon").addEventListener("click",showSheetPokemon);
 
 //===========================PESTAÑA MEJORES MOVIMIENTOS ===================================================================
 //VARIBALES UNIVERSALES PARA TRAER DEL DOM
-let hojaMovimiento=document.querySelectorAll(".hoja-movimientos")[0];
-let hMovimientos=document.querySelectorAll(".header-movimiento")[0];
-let sMovimientos=document.querySelectorAll(".section-movimiento")[0];
-let fMovimientos=document.querySelectorAll(".footer-movimiento")[0];
+let hojaMovimiento=document.querySelector(".hoja-movimientos");
+let hMovimientos=document.querySelector(".header-movimiento");
+let sMovimientos=document.querySelector(".section-movimiento");
+let fMovimientos=document.querySelector(".footer-movimiento");
 
 //FUNCION QUE GRAFICA LA PESTAÑA ESTADISTICA POKEMON
 const showMovimientos=()=>{
@@ -350,7 +403,6 @@ const showCombate=()=>{
 	const pokemon1=document.getElementById("Name1").value;
 	const pokemon2=document.getElementById("Name2").value;
 	const datepoke1=filterData(data.pokemon,"name",pokemon1);
-	console.log(datepoke1);
 	const datepoke2=filterData(data.pokemon,"name",pokemon2);
 	fMovimientos.innerHTML=`<div class="cBatalla"><div class="cImg"><h1>${datepoke1[0].name}</h1><img id="bPoke1" src="${datepoke1[0].img}"></div><div class="cDatos1"></div></div>
 	<div class="cBatalla"><div class="cImg"><h1>${datepoke2[0].name}</h1><img id="bPoke2" src="${datepoke2[0].img}"></div><div class="cDatos2"></div></div>`
@@ -391,7 +443,7 @@ const showEstadistica=()=>{
 	nEstadistico.innerHTML=types;
 	//Llena la grafica
 	let conteinerChart=document.getElementById("myChart").getContext("2d");
-	let myChart=new Chart(conteinerChart,{
+	new Chart(conteinerChart,{
 		type:"horizontalBar",
 		data:{
 		labels:newArrayTypes,

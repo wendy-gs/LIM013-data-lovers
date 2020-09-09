@@ -15,6 +15,9 @@ const dataTest=[
     ],
     "spawn-chance": "0.69",
     "egg": "2 km",
+    "evolution": {
+      "candy": "bulbasaur candy"
+    },
   },
   {
     "num": "002",
@@ -28,6 +31,9 @@ const dataTest=[
     ],
     "spawn-chance": "0.253",
     "egg": "5 km",
+    "evolution": {
+      "candy": "charmander candy"
+    },
   },
   {
     "num": "003",
@@ -42,6 +48,9 @@ const dataTest=[
     ],
     "spawn-chance": "0.0031",
     "egg": "not in eggs",
+    "evolution": {
+      "candy": "charmander candy"
+    },
   },
   {
     "num": "004",
@@ -55,6 +64,9 @@ const dataTest=[
     ],
     "spawn-chance": "0.58",
     "egg": "not in eggs",
+    "evolution": {
+      "candy": "squirtle candy"
+    },
   },
   {
     "num": "005",
@@ -68,6 +80,9 @@ const dataTest=[
     ],
     "spawn-chance":"3.032",
     "egg": "2 km",
+    "evolution": {
+      "candy": "caterpie candy"
+    },
   }
 ]
 //CREMOAS RESULTADOS DEL TEST TIPO
@@ -84,6 +99,9 @@ const dataResultType=[
     ],
     "spawn-chance": "0.58",
     "egg": "not in eggs",
+    "evolution": {
+      "candy": "squirtle candy"
+    },
   }
 ]
 const dataResultGeneration=[
@@ -99,6 +117,9 @@ const dataResultGeneration=[
     ],
     "spawn-chance":"3.032",
     "egg": "2 km",
+    "evolution": {
+      "candy": "caterpie candy"
+    },
   }
 ]
 const dataResultEgg=[
@@ -114,6 +135,9 @@ const dataResultEgg=[
     ],
     "spawn-chance": "0.253",
     "egg": "5 km",
+    "evolution": {
+      "candy": "charmander candy"
+    },
   }
 ]
 const dataResultSpawn=[
@@ -129,6 +153,9 @@ const dataResultSpawn=[
     ],
     "spawn-chance":"3.032",
     "egg": "2 km",
+    "evolution": {
+      "candy": "caterpie candy"
+    },
   }
 ]
 const dataResultAlphaUpward=[
@@ -145,6 +172,9 @@ const dataResultAlphaUpward=[
     ],
     "spawn-chance": "0.69",
     "egg": "2 km",
+    "evolution": {
+      "candy": "bulbasaur candy"
+    },
   },
   {
     "num": "005",
@@ -158,6 +188,9 @@ const dataResultAlphaUpward=[
     ],
     "spawn-chance":"3.032",
     "egg": "2 km",
+    "evolution": {
+      "candy": "caterpie candy"
+    },
   },
   {
     "num": "003",
@@ -172,6 +205,9 @@ const dataResultAlphaUpward=[
     ],
     "spawn-chance": "0.0031",
     "egg": "not in eggs",
+    "evolution": {
+      "candy": "charmander candy"
+    },
   },
   {
     "num": "002",
@@ -185,6 +221,9 @@ const dataResultAlphaUpward=[
     ],
     "spawn-chance": "0.253",
     "egg": "5 km",
+    "evolution": {
+      "candy": "charmander candy"
+    },
   },
   {
     "num": "004",
@@ -198,6 +237,9 @@ const dataResultAlphaUpward=[
     ],
     "spawn-chance": "0.58",
     "egg": "not in eggs",
+    "evolution": {
+      "candy": "squirtle candy"
+    },
   }
 ]
 
@@ -214,6 +256,9 @@ const dataResultAlphaFalling=[
     ],
     "spawn-chance": "0.58",
     "egg": "not in eggs",
+    "evolution": {
+      "candy": "squirtle candy"
+    },
   },
   {
     "num": "002",
@@ -227,6 +272,9 @@ const dataResultAlphaFalling=[
     ],
     "spawn-chance": "0.253",
     "egg": "5 km",
+    "evolution": {
+      "candy": "charmander candy"
+    },
   },
   {
     "num": "003",
@@ -241,6 +289,9 @@ const dataResultAlphaFalling=[
     ],
     "spawn-chance": "0.0031",
     "egg": "not in eggs",
+    "evolution": {
+      "candy": "charmander candy"
+    },
   },
   {
     "num": "005",
@@ -254,6 +305,9 @@ const dataResultAlphaFalling=[
     ],
     "spawn-chance":"3.032",
     "egg": "2 km",
+    "evolution": {
+      "candy": "caterpie candy"
+    },
   },
   {
     "num": "001",
@@ -268,6 +322,9 @@ const dataResultAlphaFalling=[
     ],
     "spawn-chance": "0.69",
     "egg": "2 km",
+    "evolution": {
+      "candy": "bulbasaur candy"
+    },
   } 
 ]
 const dataResultNumUpward=[
@@ -284,6 +341,9 @@ const dataResultNumUpward=[
     ],
     "spawn-chance": "0.69",
     "egg": "2 km",
+    "evolution": {
+      "candy": "bulbasaur candy"
+    },
   },
   {
     "num": "002",
@@ -297,6 +357,9 @@ const dataResultNumUpward=[
     ],
     "spawn-chance": "0.253",
     "egg": "5 km",
+    "evolution": {
+      "candy": "charmander candy"
+    },
   },
   {
     "num": "003",
@@ -311,6 +374,9 @@ const dataResultNumUpward=[
     ],
     "spawn-chance": "0.0031",
     "egg": "not in eggs",
+    "evolution": {
+      "candy": "charmander candy"
+    },
   },
   {
     "num": "004",
@@ -324,6 +390,9 @@ const dataResultNumUpward=[
     ],
     "spawn-chance": "0.58",
     "egg": "not in eggs",
+    "evolution": {
+      "candy": "squirtle candy"
+    },
   },
   {
     "num": "005",
@@ -337,6 +406,9 @@ const dataResultNumUpward=[
     ],
     "spawn-chance":"3.032",
     "egg": "2 km",
+    "evolution": {
+      "candy": "caterpie candy"
+    },
   }
 ]
 const dataResultNumFalling=[
@@ -352,6 +424,9 @@ const dataResultNumFalling=[
     ],
     "spawn-chance":"3.032",
     "egg": "2 km",
+    "evolution": {
+      "candy": "caterpie candy"
+    },
   },
   {
     "num": "004",
@@ -365,6 +440,9 @@ const dataResultNumFalling=[
     ],
     "spawn-chance": "0.58",
     "egg": "not in eggs",
+    "evolution": {
+      "candy": "squirtle candy"
+    },
   },
   {
     "num": "003",
@@ -379,6 +457,9 @@ const dataResultNumFalling=[
     ],
     "spawn-chance": "0.0031",
     "egg": "not in eggs",
+    "evolution": {
+      "candy": "charmander candy"
+    },
   },
   {
     "num": "002",
@@ -392,6 +473,9 @@ const dataResultNumFalling=[
     ],
     "spawn-chance": "0.253",
     "egg": "5 km",
+    "evolution": {
+      "candy": "charmander candy"
+    },
   },
   {
     "num": "001",
@@ -406,6 +490,63 @@ const dataResultNumFalling=[
     ],
     "spawn-chance": "0.69",
     "egg": "2 km",
+    "evolution": {
+      "candy": "bulbasaur candy"
+    },
+  }
+]
+const dataResultCandy=[
+  {
+    "num": "002",
+    "name": "charmander",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+    "type": [
+      "fire"
+    ],
+    "spawn-chance": "0.253",
+    "egg": "5 km",
+    "evolution": {
+      "candy": "charmander candy"
+    },
+  },
+  {
+    "num": "003",
+    "name": "charizard",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+    "type": [
+      "fire",
+      "flying"
+    ],
+    "spawn-chance": "0.0031",
+    "egg": "not in eggs",
+    "evolution": {
+    "candy": "charmander candy"
+    },
+  }
+]
+const dataResultLetter=[
+  {
+    "num": "001",
+    "name": "bulbasaur",
+    "generation": {
+      "num": "generation i",
+      "name": "kanto"
+    },
+    "type": [
+      "grass",
+      "poison"
+    ],
+    "spawn-chance": "0.69",
+    "egg": "2 km",
+    "evolution": {
+      "candy": "bulbasaur candy"
+    },
   }
 ]
 const dataResulCalculate=[2,40] //el resultado de pokemon volador
@@ -426,6 +567,12 @@ describe('filterData', () => {
   });
   it('should return an array for "dataTest","spawn-chance","Medio"', () => {
     expect(filterData(dataTest,"aparicion","Medio")).toEqual(dataResultSpawn);
+  });
+  it('should return an array for "dataTest","candy"', () => {
+    expect(filterData(dataTest,"caramelo","charmander candy")).toEqual(dataResultCandy);
+  });
+  it('should return an array for "dataTest","letter"', () => {
+    expect(filterData(dataTest,"letra","b")).toEqual(dataResultLetter);
   });
 })
 //TEST DE LA FUNCION SORTDATA

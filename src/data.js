@@ -1,12 +1,3 @@
-// estas funciones son de ejemplo
-
-export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};
 
 //FUNCION FILTRO
 export const filterData=(data,type,condicion)=>{
@@ -50,6 +41,8 @@ export const filterData=(data,type,condicion)=>{
  return resultado;
 }
 
+
+
 //FUNCION ORDENA
 export const sortData=(data,sortBy)=>{
   switch(sortBy){
@@ -82,5 +75,4 @@ export const computeStats=(data,type)=>{
   totalTipos.push(cantidad);
   totalTipos.push(Math.round(porcentaje* 100)/ 100);
   return totalTipos;
- 
 }

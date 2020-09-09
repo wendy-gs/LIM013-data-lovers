@@ -2,6 +2,7 @@ import {filterData,sortData,computeStats} from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
+// import funciones from './data.js';
 
 let arreglo=data.pokemon.slice();//creamos el arreglo temporal que se ira modificando segun los filtros
 

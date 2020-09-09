@@ -437,7 +437,7 @@ const showEstadistica=()=>{
 
 	//Llena el header de estadistica
 	hojaEstadistico.classList.remove("ocultarElemento");
-	//sEstadistico.classList.remove("ocultarElemento")
+	sEstadistico.classList.remove("ocultarElemento")
 	hEstadistico.innerHTML=`<div class="img-pikachu"><img id="pokemon" src="/imagenes/pika.GIF"></div>&nbsp<h1>CÁLCULO POR TIPO DE POKÉMON</h1>`
 	//Llena la barra de tipos de pokemon
 	nEstadistico.innerHTML=types;

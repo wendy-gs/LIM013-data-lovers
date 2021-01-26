@@ -31,7 +31,10 @@ background: #fff;
 	color: #000000;
 	display: none;
 }
-
+.menu{
+	position: fixed;
+    top: 0;
+}
 .menu ul{
 	margin:0;
 	list-style:none;
@@ -95,6 +98,7 @@ padding: 0.5em;
 margin-right:0.5em;
 border-radius: 8px;
 border: 4px solid #4BAADE;
+outline:none;
 }
 #btn-todo{
 color: #fff;
@@ -102,10 +106,11 @@ text-align: center;
 background-color: #4BAADE;
 border-radius: 1em;
 margin-left: 0.5em;
-width: 5%;
+width: 7%;
 min-width: 50px;
 padding: 1%;
 border: none;
+outline:none;
 }
 /*-------------Contendor filtros de pokemon--------------*/
 .contenedor-filtros{
@@ -330,7 +335,7 @@ align-items: center;
 }
 .contenido-modal{
 width: 80%;
-height: 80%;
+height: 90%;
 background: #fff;
 display: flex;
 flex-direction: column;
@@ -537,7 +542,7 @@ display: flex;
 }
 
 .resultadoCalculo{
-background-image: url("/imagenes/pokemones.PNG");
+background-image: url("https://github.com/wendy-gs/LIM013-data-lovers/blob/master/src/imagenes/pokemones.png?raw=true");
 background-size: cover;
 background-position: center;
 margin-right: 2%;

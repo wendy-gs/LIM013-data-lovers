@@ -31,10 +31,6 @@ background: #fff;
 	color: #000000;
 	display: none;
 }
-.menu{
-	position: fixed;
-    top: 0;
-}
 .menu ul{
 	margin:0;
 	list-style:none;

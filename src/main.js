@@ -400,7 +400,7 @@ sMovimientos.innerHTML=`<div class="itemS-movimiento"><label for="Name1">Pokemon
 <input type="text" id="Name2" name="Name2"/></div><div class="itemS-movimiento"><button id="btnCombatir">COMPARAR</button></div>`
 
 //FUNCION QUE TRAE LOS DATOS DE LOS POKEMON A BATALLAR
-const showCombate=()=>{
+/*const showCombate=()=>{
 	const pokemon1=document.getElementById("Name1").value;
 	const pokemon2=document.getElementById("Name2").value;
 	const datepoke1=filterData(data.pokemon,"name",pokemon1);
@@ -410,8 +410,8 @@ const showCombate=()=>{
 }
 document.getElementById("btnCombatir").addEventListener("click",showCombate);
 }
-document.getElementById("pestañaMovimientos").addEventListener("click",showMovimientos);
-
+//document.getElementById("pestañaMovimientos").addEventListener("click",showMovimientos);
+*/
 //=========================== PESTAÑA ESTADISTICA POKEMON ==================================================================
 //VARIBALES UNIVERSALES PARA TRAER DEL DOM
 let hojaEstadistico=document.querySelector(".hoja-estadistico");

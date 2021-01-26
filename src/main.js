@@ -185,7 +185,7 @@ const createCard=(pokemon)=>{
 			<div class="ficha-boton">
         <h3><strong>Generación: </strong> ${pokemon.generation.name}</h3>
 				<h3><strong>Huevo: </strong> ${pokemon.egg}</h3>
-				<h3> frecuencia: ${parseFloat(pokemon['spawn-chance'] * 100).toFixed(2)}% </h3>
+				<h3><strong> frecuencia:</strong> ${parseFloat(pokemon['spawn-chance'] * 100).toFixed(2)}% </h3>
         <h3> ${typePokemon(pokemon)}</h3>
       </div>	 
     </div>
@@ -210,6 +210,7 @@ const fillModal=(boton)=>{
 		//prueba de capturar ancho de la pantalla
 		const ancho=screen.width;
 		const pokemon=evt.target.id;
+		
 		let modal=document.getElementById("modal");
 		let cmodal=document.getElementById("ctn-modal");
 		cmodal.style.visibility="visible";
@@ -221,7 +222,7 @@ const fillModal=(boton)=>{
 		}
 
 		let close=document.querySelectorAll(".close-modal")[0];
-		close.addEventListener("click",function(e){
+		close.addEventListener("click",function(){
 			modal.classList.add("modal-close");
 			setTimeout(function(){
 				cmodal.style.visibility="hidden";
@@ -246,13 +247,13 @@ const showInicio=()=>{
 	hojaMovimiento.classList.add("ocultarElemento");
 	hojaEstadistico.classList.add("ocultarElemento");
 	//MOSTRAMOS ELEMENTOS
-	pantalla_inicio.classList.remove("ocultarElemento")
+	pantalla_inicio.classList.remove("ocultarElemento");
 }
 document.getElementById("menu_inicio").addEventListener("click",showInicio)
 
 //============================================PESTAÑA POKEMON========================================================================
 //VARIABLES UNIVERSALES PARA TRAER DEL DOM
-let hojaPokemon=document.querySelectorAll(".hoja-pokemon")[0];
+let hojaPokemon=document.querySelector(".hoja-pokemon");
 let containerImg=document.getElementById("contenedor-imagenes");
 let title=document.getElementById("titulo-pokemon");
 let typeGeneration=document.querySelectorAll("div.filtro > a.generacion");
@@ -262,8 +263,6 @@ let filtroGeneracion=document.getElementById("filtro-generacion");
 let filtroHuevo=document.getElementById("filtro-huevo");
 let filtroTipo=document.getElementById("filtro-tipo");
 let filtroAparicion=document.getElementById("filtro-aparicion");
-
-
 let butonFichas="";
 //-----------------------------FUNCION QUE MUESTRA TODOS LOS POKEMON -----------------------------------
 const showAll=()=>{
@@ -286,6 +285,7 @@ const searchLetter=()=>{
 		butonFichas=document.querySelectorAll("button.btn-modal");
 		butonFichas.forEach(fillModal);
 	}else{
+		title.innerHTML="";
 		containerImg.innerHTML="No se encontro pokemon";
 	}
 }
@@ -309,9 +309,7 @@ for(let i=0;i<newArrayTypes.length;i++){
 const filtrado=(boton)=>{
 	boton.addEventListener("click", function(evt){
 	const hijo = evt.target.name;
-	console.log(hijo);
 	const tipoFiltro=evt.target.className;
-	console.log(tipoFiltro);
 	arreglo=filterData(data.pokemon,tipoFiltro,hijo);//guardo en mi array temporal la nueva data a mostrarse}
 	if(tipoFiltro==="aparicion"){
 		const dataAparicion=sortData(arreglo,"Aparicion");
@@ -383,10 +381,10 @@ document.getElementById("pestañaPokemon").addEventListener("click",showSheetPok
 
 //===========================PESTAÑA MEJORES MOVIMIENTOS ===================================================================
 //VARIBALES UNIVERSALES PARA TRAER DEL DOM
-let hojaMovimiento=document.querySelectorAll(".hoja-movimientos")[0];
-let hMovimientos=document.querySelectorAll(".header-movimiento")[0];
-let sMovimientos=document.querySelectorAll(".section-movimiento")[0];
-let fMovimientos=document.querySelectorAll(".footer-movimiento")[0];
+let hojaMovimiento=document.querySelector(".hoja-movimientos");
+let hMovimientos=document.querySelector(".header-movimiento");
+let sMovimientos=document.querySelector(".section-movimiento");
+let fMovimientos=document.querySelector(".footer-movimiento");
 
 //FUNCION QUE GRAFICA LA PESTAÑA ESTADISTICA POKEMON
 const showMovimientos=()=>{
@@ -406,7 +404,6 @@ const showCombate=()=>{
 	const pokemon1=document.getElementById("Name1").value;
 	const pokemon2=document.getElementById("Name2").value;
 	const datepoke1=filterData(data.pokemon,"name",pokemon1);
-	console.log(datepoke1);
 	const datepoke2=filterData(data.pokemon,"name",pokemon2);
 	fMovimientos.innerHTML=`<div class="cBatalla"><div class="cImg"><h1>${datepoke1[0].name}</h1><img id="bPoke1" src="${datepoke1[0].img}"></div><div class="cDatos1"></div></div>
 	<div class="cBatalla"><div class="cImg"><h1>${datepoke2[0].name}</h1><img id="bPoke2" src="${datepoke2[0].img}"></div><div class="cDatos2"></div></div>`
@@ -441,13 +438,12 @@ const showEstadistica=()=>{
 
 	//Llena el header de estadistica
 	hojaEstadistico.classList.remove("ocultarElemento");
-	//sEstadistico.classList.remove("ocultarElemento")
 	hEstadistico.innerHTML=`<div class="img-pikachu"><img id="pokemon" src="/imagenes/pika.GIF"></div>&nbsp<h1>CÁLCULO POR TIPO DE POKÉMON</h1>`
 	//Llena la barra de tipos de pokemon
 	nEstadistico.innerHTML=types;
 	//Llena la grafica
 	let conteinerChart=document.getElementById("myChart").getContext("2d");
-	let myChart=new Chart(conteinerChart,{
+	new Chart(conteinerChart,{
 		type:"horizontalBar",
 		data:{
 		labels:newArrayTypes,

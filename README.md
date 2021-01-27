@@ -56,14 +56,8 @@ Lo testeamos nuevamente con 1 usuario y nos hizo notar que la barra donde mostr�
 
 ## Versión Final
 
-## Versión Desktop
+## Versión Desktop y mobile
 ![Vista 1 de la web](./img_readme/vista1.gif)
-![vista 2 de la web](./img_readme/vista2.gif)
-
-## Versión Mobile
-![vista 1 de la web](./img_readme/vista_mobile.gif)
-
-
 
 ## 3. Objetivos de aprendizaje
 

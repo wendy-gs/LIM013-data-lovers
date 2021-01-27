@@ -46,7 +46,7 @@ const attack=(pok)=>{
 	const array=pok["special-attack"];
 	let ataque="";
 	for(let i=0;i<array.length;i++){
-		ataque+=`<span class="ataque">${array[i].name}</span><br>`
+		ataque+=`<span class="ataque">${array[i].name} </span>`
 	}
 	return ataque;
 }
@@ -244,7 +244,7 @@ let pantalla_inicio=document.getElementById("pantalla_inicio");
 const showInicio=()=>{
 	//OCULTAMOS ELEMENTOS DE OTRAS PAGINAS
 	hojaPokemon.classList.add("ocultarElemento");	
-	hojaMovimiento.classList.add("ocultarElemento");
+	//hojaMovimiento.classList.add("ocultarElemento");
 	hojaEstadistico.classList.add("ocultarElemento");
 	//MOSTRAMOS ELEMENTOS
 	pantalla_inicio.classList.remove("ocultarElemento");
@@ -368,7 +368,7 @@ document.getElementById("cmb-ordenamiento").addEventListener("change",orderPoke)
 const showSheetPokemon=()=>{
 	//OCULTAMOS ELEMENTOS DE OTRAS PAGINAS
 	pantalla_inicio.classList.add("ocultarElemento");
-	hojaMovimiento.classList.add("ocultarElemento");
+	//hojaMovimiento.classList.add("ocultarElemento");
 	hojaEstadistico.classList.add("ocultarElemento");
 	//MOSTRAMOS ELEMENTOS
 	hojaPokemon.classList.remove("ocultarElemento");
@@ -381,7 +381,7 @@ document.getElementById("pestañaPokemon").addEventListener("click",showSheetPok
 
 //===========================PESTAÑA MEJORES MOVIMIENTOS ===================================================================
 //VARIBALES UNIVERSALES PARA TRAER DEL DOM
-let hojaMovimiento=document.querySelector(".hoja-movimientos");
+/*let hojaMovimiento=document.querySelector(".hoja-movimientos");
 let hMovimientos=document.querySelector(".header-movimiento");
 let sMovimientos=document.querySelector(".section-movimiento");
 let fMovimientos=document.querySelector(".footer-movimiento");
@@ -434,11 +434,11 @@ const showEstadistica=()=>{
 	//Quitamos todo los elementos de otras hojas
 	hojaPokemon.classList.add("ocultarElemento");
 	pantalla_inicio.classList.add("ocultarElemento");
-	hojaMovimiento.classList.add("ocultarElemento");
+	//hojaMovimiento.classList.add("ocultarElemento");
 
 	//Llena el header de estadistica
 	hojaEstadistico.classList.remove("ocultarElemento");
-	hEstadistico.innerHTML=`<div class="img-pikachu"><img id="pokemon" src="/imagenes/pika.GIF"></div>&nbsp<h1>CÁLCULO POR TIPO DE POKÉMON</h1>`
+	hEstadistico.innerHTML=`<div class="img-pikachu"><img id="pokemon" src="https://github.com/wendy-gs/LIM013-data-lovers/blob/master/src/imagenes/pika.gif?raw=true"></div>&nbsp<h1>CÁLCULO POR TIPO DE POKÉMON</h1>`
 	//Llena la barra de tipos de pokemon
 	nEstadistico.innerHTML=types;
 	//Llena la grafica
@@ -483,3 +483,25 @@ let typeSon=document.querySelectorAll("div.nav-estadistico> a.tipo");//capturamo
 	})
 }
 document.getElementById("estadistica").addEventListener("click",showEstadistica);
+
+/*----------------- Efecto Scroll up--------------------------------*/
+
+window.onscroll = function(){
+    const currentScroll = document.documentElement.scrollTop; //desplazamiento desde la parte superior de la pagina
+    
+    //condicion para desaparecer boton cuando llegue a top
+    if (currentScroll > 500){ //desplazamiento mayor a 500px mostrar botón
+      document.querySelector(".scrollUp").style.transform = "scale(1)";
+    }else{ //desaparecer boton en menos de 500px
+      document.querySelector(".scrollUp").style.transform = "scale(0)";
+    }
+
+    //evento que me permite ir a top con click
+    document.querySelector(".scrollUp").addEventListener("click", scroll = ()=>{
+    if (currentScroll > 0){ 
+        window.requestAnimationFrame(scroll); //creando animacion 
+        window.scrollTo (0, currentScroll-(currentScroll/8)); //sin animacion seria window.scrollTo (0,0) ejex ejey 0
+    }
+  
+  })
+}

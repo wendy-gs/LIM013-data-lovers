@@ -4,6 +4,9 @@
 	box-sizing: border-box;
 }
 header{
+	
+	position: fixed;
+	top: 0;
 	width: 100%;
 	background:linear-gradient(to right,#ff2600,#1b5dd8);
 	display: flex;
@@ -54,18 +57,45 @@ background: #020379;
 }
 footer{
 display: flex; 
-background-color: #199939;
-line-height: 3;
+
 width:100%;
+
 justify-content: center;
+position:fixed;
+line-height: 3;
+   left:0px;
+   bottom:0px;
+   height:40px;
+}
+.scrollUp{
+	width: 40px;
+	height: 40px;
+	background-color: black;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	border-radius: 50%;
+	font-family: cursive;
+	font-size: 25px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	border: black;
+	outline: none;
+	cursor: pointer;
+	transition: all 300ms ease;
+	transform: scale(0);
 }
 /*======================================================HOJA INICIO ===============================================*/
+#pantalla_inicio{
+	margin-top: 90px;
+}
 .Contenido-inicio{
 display: flex;
 flex-direction: column;
 align-items: center;
-position:bottom;
-padding-top: 100px;
+
 font-family: cursive;
 }
 #imagen_inicio{
@@ -74,6 +104,8 @@ height: 50%;
 }
 /*======================================================HOJA POKEMON ===============================================*/
 .hoja-pokemon{
+	margin-top: 90px;
+	margin-bottom: 10px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -316,12 +348,13 @@ padding: 4% 3%;
 font-size: 14px;
 width: 120%;
 }
+
 /* ===============================================VENTANA MODAL========================================*/
 .contenedor-modal{
 visibility: hidden;/*lo ocultamos al inidico*/
 position: fixed;/*hace que salga del flujo y desaparesca*/
 width: 100%;
-height: 100vh;
+height: 100%;
 top: 0;
 left:0;
 background:rgba(0,0,0, 0.7);
@@ -331,7 +364,7 @@ align-items: center;
 }
 .contenido-modal{
 width: 80%;
-height: 90%;
+height: 85%;
 background: #fff;
 display: flex;
 flex-direction: column;
@@ -445,6 +478,8 @@ width: 200px;
 }
 .tabla-puntos td{
 border:solid 2px #45506B;
+width: 200px;
+
 }
 .ataque{
 color: #45506B;;
@@ -497,6 +532,9 @@ justify-content:center;
 align-items: center;
 padding-top: 5%;
 }
+.tabla-puntos{
+	margin: auto;
+}
 .footer-puntos-celular{
 width: 98%;
 color: #45506B;
@@ -504,6 +542,7 @@ color: #45506B;
 
 /**/
 .hoja-estadistico{
+	margin-top: 90px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -638,7 +677,7 @@ display: flex;
 	}
 	.menu{
 			position: absolute;
-			margin-top:235px;
+			margin-top:190px;
 			background:#1cdddd ;
 			width: 100%;
 			transition: all 0.5s;
@@ -656,5 +695,17 @@ display: flex;
 	}
 	#btn-menu:checked ~ .menu{
 			transform: translateX(0%) ;
+	}
+	.contenido-modal{
+		height: 70%;
+	}
+	.ficha-pokemon{
+		font-size: small;
+	}
+	#titulo-pokemon{
+		font-size: 20px;
+	}
+	.hoja-pokemon{
+		font-size: 14px;
 	}
 }

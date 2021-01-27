@@ -57,7 +57,7 @@ Lo testeamos nuevamente con 1 usuario y nos hizo notar que la barra donde mostr�
 ## Versión Final
 
 ## Versión Desktop y mobile
-![Vista 1 de la web](./img_readme/vista1.gif)
+![Vista 1 de la web](https://github.com/wendy-gs/LIM013-data-lovers/blob/master/src/imagenes/view%20responsive.JPG?raw=true)
 
 ## 3. Objetivos de aprendizaje
 
